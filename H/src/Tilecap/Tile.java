@@ -19,7 +19,6 @@ public class Tile extends JLabel implements MouseListener{
 
 	
 	Tile(int x, int y) {
-		System.out.println("ahahaha");
 		this.setBounds(x, y, size, size);
 		this.setOpaque(true);
 		this.setBackground(Color.lightGray);

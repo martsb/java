@@ -12,10 +12,10 @@ import javax.swing.JLabel;
 
 public class Block extends JLabel implements MouseListener{
 
-	static ImageIcon ground = new ImageIcon("C:\\Users\\Marts Druvis Lauma\\eclipse-workspace\\H\\res\\Ground.png");
-	static ImageIcon soil = new ImageIcon("C:\\Users\\Marts Druvis Lauma\\eclipse-workspace\\H\\res\\Soil.png");
-	static ImageIcon brokenGround = new ImageIcon("C:\\Users\\Marts Druvis Lauma\\eclipse-workspace\\H\\res\\BrokenGround.png");
-	static ImageIcon brokenSoil = new ImageIcon("C:\\Users\\Marts Druvis Lauma\\eclipse-workspace\\H\\res\\BrokenSoil.png");
+	static ImageIcon ground = new ImageIcon("C:\\Users\\Marts Druvis Lauma\\git\\repository2\\H\\res\\Ground.png");
+	static ImageIcon soil = new ImageIcon("C:\\Users\\Marts Druvis Lauma\\git\\repository2\\H\\res\\Soil.png");
+	static ImageIcon brokenGround = new ImageIcon("C:\\Users\\Marts Druvis Lauma\\git\\repository2\\H\\res\\BrokenGround.png");
+	static ImageIcon brokenSoil = new ImageIcon("C:\\Users\\Marts Druvis Lauma\\git\\repository2\\H\\res\\BrokenSoil.png");
 	static JLabel block1 = new JLabel();
 	static ArrayList<JLabel> blockList = new ArrayList<JLabel>();
 	static int SIZE = 50;
@@ -36,6 +36,7 @@ public class Block extends JLabel implements MouseListener{
 		this.setBounds(x, y, SIZE, SIZE);
 		this.setBackground(new Color(0f, 0f, 0f, 0f));
 		this.setOpaque(true);
+		this.setVisible(true);
 		this.addMouseListener(this);
 		blockList.add(this);
 		Main.panel.add(this);

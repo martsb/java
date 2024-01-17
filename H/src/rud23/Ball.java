@@ -12,7 +12,7 @@ public class Ball extends JLabel {
 	static int startingY = 105;
 	String direction;
 	Path currectPath;
-    static ImageIcon imageIcon = new ImageIcon("C:\\Users\\Marts Druvis Lauma\\eclipse-workspace\\H\\res\\Ball.png");
+    static ImageIcon imageIcon = new ImageIcon("C:\\Users\\Marts Druvis Lauma\\git\\repository2\\H\\res\\Soil.png");
     static ArrayList<Ball> all = new ArrayList<Ball>();
     Color c=new Color(0f,0f,0f,0f );
 
