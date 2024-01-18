@@ -41,6 +41,9 @@ public class Main implements Runnable, MouseListener{
 		frame.add(panel);
 		
 		new Player();
+		new Enemy(200, 20);
+		Inventory.inventory = new Inventory();
+		new Inventory(20, 20);
 		Block.generateGround();
 		threade = new Thread(this);
 		threade.start();
@@ -54,10 +57,21 @@ public class Main implements Runnable, MouseListener{
 				continue;
 			}
 			if (count % 3 == 0 && Player.velocity < 10) Player.velocity++;
+			if (count % 3 == 0 && Enemy.velocity < 10) Enemy.velocity++;
+
 			if (!Player.hasCollisionsY()) Player.player.setLocation(Player.player.getX(), Player.player.getY() + Player.velocity);
-			if (!Player.hasCollisionsX(-Player.speed) && Player.leftPressed) Block.move(Player.speed);
-			if (!Player.hasCollisionsX(Player.speed) && Player.rightPressed) Block.move(-Player.speed);
+			if (!Player.hasCollisionsX(-Player.speed) && Player.leftPressed) {
+				Block.move(Player.speed);
+				Enemy.enemy.setLocation(Enemy.enemy.getX() + Player.speed, Enemy.enemy.getY());
+			}
+			if (!Player.hasCollisionsX(Player.speed) && Player.rightPressed) {
+				Block.move(-Player.speed);
+				Enemy.enemy.setLocation(Enemy.enemy.getX() - Player.speed, Enemy.enemy.getY());
+			}
+			if (!Enemy.hasCollisionsY()) Enemy.enemy.setLocation(Enemy.enemy.getX(), Enemy.enemy.getY() + Enemy.velocity);
+			if(!Enemy.hasCollisionsX(Enemy.speed)) Enemy.move();
 			if (Player.player.getY() > SCREEN_HEIGHT) System.exit(0);
+			Enemy.checkTouch();
 		//	if (count % 100 == 0) Block.generateRandomBlocks(1);
 			panel.repaint();
 			count++;

@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 
 public class Player extends JLabel implements KeyListener{
 	
-	 static final int SIZE = 32;
+	 static final int SIZE = 25;
 	 static JLabel player;
 	 static int velocity = 0;
 	 static int speed = 5;
@@ -60,6 +60,20 @@ public class Player extends JLabel implements KeyListener{
 		if (e.getKeyCode() == KeyEvent.VK_A) leftPressed = true;
 		if (e.getKeyCode() == KeyEvent.VK_D) rightPressed = true;
 		if (e.getKeyCode() == KeyEvent.VK_H) Block.explosion();
+		if (e.getKeyCode() == KeyEvent.VK_E) {
+			if (Player.player.getY() < Main.SCREEN_HEIGHT / 2) {
+				Inventory.inventory.setBounds(Inventory.xLOCATION, Inventory.yLOCATION + Main.SCREEN_HEIGHT / 2, Inventory.WIDTH, Inventory.HEIGHT);				
+			}
+			else {
+				Inventory.inventory.setBounds(Inventory.xLOCATION, Inventory.yLOCATION, Inventory.WIDTH, Inventory.HEIGHT);				
+			}
+			if (Inventory.inventory.isVisible()) {
+				Inventory.inventory.setVisible(false);
+			}
+			else {
+				Inventory.inventory.setVisible(true);
+			}
+		}
 	}
 
 	@Override

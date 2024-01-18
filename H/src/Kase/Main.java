@@ -1,6 +1,8 @@
 package Kase;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -28,6 +30,11 @@ public class Main {
 		kaste.setOpaque(true);
 		kaste.setIcon(icon1);
 		panel.add(kaste);
+		
+	}
+	static void draw(Graphics g) {
+		Graphics2D g2D = (Graphics2D) g;
+		g2D.drawRect(200, 200, 100, 100);
 	}
 	public static void main(String[] args) {
 		new Main();
